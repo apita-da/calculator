@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="menu">
+                <div class="centrado">
+                    <div class="item">Calculadora simple</div>
+                    <!-- <div class="item">Calculadora científica</div> -->
+                </div>
+            </nav>
+    </header>
+    <main class="main">
+        <div class="simple">
+            <div class="row1">
+                <div class="calculator__display">0</div>
+                <!-- <button class="calculator__clear" data-action="clear_one"><i class="fas fa-backspace"></i></button> -->
+            </div>
+            <div class="calculator__keys">
+                <button class="btns_operator" data-action="add">+</button>
+                <button class="btns_operator" data-action="subtract">-</button>
+                <button class="btns_operator" data-action="multiply">&times;</button>
+                <button class="btns_operator" data-action="divide">÷</button>
+                <button class="btns_num">7</button>
+                <button class="btns_num">8</button>
+                <button class="btns_num">9</button>
+                <button class="btns_num">4</button>
+                <button class="btns_num">5</button>
+                <button class="btns_num">6</button>
+                <button class="btns_num">1</button>
+                <button class="btns_num">2</button>
+                <button class="btns_num">3</button>
+                <button class="btns_num">0</button>
+                <button data-action="decimal" class="btns_num">.</button>
+                <button class="btns_num" data-action="clear">AC</button>
+                <button class="btns_equal" data-action="calculate">=</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+</body>
+</html>

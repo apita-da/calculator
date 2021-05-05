@@ -24,24 +24,36 @@ keys.addEventListener('click', e => {
     if (action === 'decimal') {
         display.textContent = displayedNum + '.'
         if (!displayedNum.includes('.')) {
-        display.textContent = displayedNum + '.'
-        } else if (previousKeyType === 'operator') {
+            display.textContent = displayedNum + '.'
+        } else if (previousKeyType === 'operator'|| previousKeyType === 'calculate') {
             display.textContent = '0.'
           }
     calculator.dataset.previousKey = 'decimal'        
     }
-    if (action === 'clear') {
-        display.textContent = '0'
-        calculator.dataset.previousKey = 'clear'
+    if (action !== 'clear') {
+        const clearButton = calculator.querySelector('[data-action=clear]')
+        clearButton.textContent = 'CE'
     }
+    if (action === 'clear') {
+        if (key.textContent === 'AC') {
+          calculator.dataset.firstValue = ''
+          calculator.dataset.modValue = ''
+          calculator.dataset.operator = ''
+          calculator.dataset.previousKeyType = ''
+        } else {
+          key.textContent = 'AC'
+        }
+        
+      display.textContent = 0
+        calculator.dataset.previousKeyType = 'clear'
+      }
     if (
         action === 'add' ||
         action === 'subtract' ||
         action === 'multiply' ||
         action === 'divide'
       ) {
-        if (firstValue && operator &&
-            previousKeyType !== 'operator') {
+        if (firstValue && operator && previousKeyType !== 'operator' && previousKeyType !== 'calculate') {
             const calcValue = calculate(firstValue, operator, secondValue)
             display.textContent = calcValue
             calculator.dataset.firstValue = calcValue
